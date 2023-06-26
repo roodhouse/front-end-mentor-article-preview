@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/front-end-mentor-article-preview/static/css/main.31de13a0.css",
+    "main.js": "/front-end-mentor-article-preview/static/js/main.368eb738.js",
+    "static/media/drawers.jpg": "/front-end-mentor-article-preview/static/media/drawers.631135b079e9f19bada8.jpg",
+    "index.html": "/front-end-mentor-article-preview/index.html",
+    "static/media/icon-pinterest.svg": "/front-end-mentor-article-preview/static/media/icon-pinterest.45264b1d1cdf7f0c420d573853779f7b.svg",
+    "static/media/icon-twitter.svg": "/front-end-mentor-article-preview/static/media/icon-twitter.45735e3b0e1132259059ab811589d1e7.svg",
+    "static/media/icon-facebook.svg": "/front-end-mentor-article-preview/static/media/icon-facebook.1e9b33385e6dfe7a61acbff13373209c.svg",
+    "static/media/icon-share.svg": "/front-end-mentor-article-preview/static/media/icon-share.890102fe1500a6fba9a76d1b384684d2.svg",
+    "static/media/icon-share-clicked.svg": "/front-end-mentor-article-preview/static/media/icon-share-clicked.f650c03c481e6650560b4637510770bd.svg",
+    "main.31de13a0.css.map": "/front-end-mentor-article-preview/static/css/main.31de13a0.css.map",
+    "main.368eb738.js.map": "/front-end-mentor-article-preview/static/js/main.368eb738.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31de13a0.css",
+    "static/js/main.368eb738.js"
+  ]
+}
