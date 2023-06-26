@@ -14,7 +14,7 @@ function App() {
           <div id='textWrapper' className='px-8 pb-[52px]'>
             <Text />
           </div>
-          <div id='shareWrapper' className='pb-[20px] px-8 flex items-center justify-between'>
+          <div id='shareWrapper'>
             <Share />
           </div>
         </div>
