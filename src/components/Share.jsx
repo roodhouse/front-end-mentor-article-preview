@@ -10,26 +10,51 @@ function Share() {
 
     // click on normal view
     function handleClick(e) {
-        // grab the div containing all the info
-        const hideDiv = e.target.parentElement.parentElement.parentElement
-        // grab the hidden div
-        const showDiv = hideDiv.nextSibling
-        // change the div with all info to display none
-        hideDiv.style.display = 'none';
-        // change the hidden div to display flex
-        showDiv.style.display = 'flex';
+        // check content width
+        let contentWidth = getComputedStyle(document.getElementById('contwentWrapper')).maxWidth;
+        contentWidth = contentWidth.split('px')
+        contentWidth = contentWidth[0]
+        contentWidth = parseInt(contentWidth)
+        
+        if (contentWidth < 730) {
+            // grab the div containing all the info
+            const hideDiv = e.target.parentElement.parentElement.parentElement
+            // grab the hidden div
+            const showDiv = hideDiv.nextSibling
+            // change the div with all info to display none
+            hideDiv.style.display = 'none';
+            // change the hidden div to display flex
+            showDiv.style.display = 'flex';
+        } else {
+            console.log('larger')
+            // change the icon
+            const clickedIcon = e.target
+            const clickedIconParent = clickedIcon.parentElement.parentElement
+            const hiddenDiv = clickedIconParent.nextSibling
+            clickedIconParent.style.display = 'none'
+            hiddenDiv.style.display = 'flex'
+            
+        }
     }
 
     // click on share view
     function handleClickClicked(e) {
-        // grab the clicked div
-        const hideDiv = e.target.parentElement.parentElement.parentElement
-        // grab the hidden div
-        const showDiv = hideDiv.previousSibling;
-        // change the shown div to display none
-        hideDiv.style.display = 'none';
-        // change the hidden div to display flex
-        showDiv.style.display = 'flex';
+        // check content width
+        let contentWidth = getComputedStyle(document.getElementById('contwentWrapper')).maxWidth;
+        contentWidth = contentWidth.split('px')
+        contentWidth = contentWidth[0]
+        contentWidth = parseInt(contentWidth)
+
+        if (contentWidth < 730) {
+            // grab the clicked div
+            const hideDiv = e.target.parentElement.parentElement.parentElement
+            // grab the hidden div
+            const showDiv = hideDiv.previousSibling;
+            // change the shown div to display none
+            hideDiv.style.display = 'none';
+            // change the hidden div to display flex
+            showDiv.style.display = 'flex';
+        }
     }
 
   return (
@@ -51,6 +76,26 @@ function Share() {
                     <img src={Icon} alt="Icon" />
                 </div>
             </div>
+            <div id='iconClicked' onClick={handleClickClicked} className='hidden w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-medBlue'>
+                <div id='iconClickedContainer'>
+                    <img src={ClickedIcon} alt="Clicked Icon" />
+                </div>
+            </div>
+            <div id="socialToolTip" className='hidden absolute flex w-[248px] justify-between bg-darkBlue px-[37px] py-[18px] rounded-[10px] items-center top-[320px] right-[200px]'>
+                <div id="shareDiv" className='text-[13px] leading-[20px] font-medium font-["Manrope"] tracking-[5px] text-lightBlue pr-[21px]'>
+                    <p>SHARE</p>
+                </div>
+                <div id="facebook" className=''>
+                    <img src={Facebook} alt="Facebook" />
+                </div>
+                <div id="twitter" className=''>
+                    <img src={Twitter} alt="Twitter" />
+                </div>
+                <div id="pinterest" className=''>
+                    <img src={Pinterest} alt="Pinterest" />
+                </div>
+            </div>
+            <div id='arrow' className='hidden w-0 h-0 border-x-[10px] border-x-transparent border-t-[10px] border-t-darkBlue absolute top-[375px] right-[317px]'></div>
         </div>
         <div id='clicked' className='hidden flex items-center justify-between bg-darkBlue rounded-[0px_0px_10px_10px] px-8 py-4'>
             <div id="shareDiv" className='text-[13px] leading-[20px] font-medium font-["Manrope"] tracking-[5px] text-lightBlue'>
