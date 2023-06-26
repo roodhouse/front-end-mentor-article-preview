@@ -6,10 +6,32 @@ import Twitter from '../images/icon-twitter.svg'
 import Pinterest from '../images/icon-pinterest.svg'
 import ClickedIcon from '../images/icon-share-clicked.svg'
 
-// standard view
-// clicked view
-
 function Share() {
+
+    // click on normal view
+    function handleClick(e) {
+        // grab the div containing all the info
+        const hideDiv = e.target.parentElement.parentElement.parentElement
+        // grab the hidden div
+        const showDiv = hideDiv.nextSibling
+        // change the div with all info to display none
+        hideDiv.style.display = 'none';
+        // change the hidden div to display flex
+        showDiv.style.display = 'flex';
+    }
+
+    // click on share view
+    function handleClickClicked(e) {
+        // grab the clicked div
+        const hideDiv = e.target.parentElement.parentElement.parentElement
+        // grab the hidden div
+        const showDiv = hideDiv.previousSibling;
+        // change the shown div to display none
+        hideDiv.style.display = 'none';
+        // change the hidden div to display flex
+        showDiv.style.display = 'flex';
+    }
+
   return (
     <>
         <div id='normal' className='flex items-center justify-between px-8 py-4'>
@@ -24,13 +46,13 @@ function Share() {
                     <p>28 Jun 2020</p>
                 </div>
             </div>
-            <div id='icon' className='w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-offWhite'>
+            <div id='icon' onClick={handleClick} className='w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-offWhite'>
                 <div id='iconContainer'>
                     <img src={Icon} alt="Icon" />
                 </div>
             </div>
         </div>
-        <div id='clicked' className='flex items-center justify-between bg-darkBlue rounded-[0px_0px_10px_10px] px-8 py-4'>
+        <div id='clicked' className='hidden flex items-center justify-between bg-darkBlue rounded-[0px_0px_10px_10px] px-8 py-4'>
             <div id="shareDiv" className='text-[13px] leading-[20px] font-medium font-["Manrope"] tracking-[5px] text-lightBlue'>
                 <p>SHARE</p>
             </div>
@@ -45,9 +67,9 @@ function Share() {
                     <img src={Pinterest} alt="Pinterest" />
                 </div>
             </div>
-            <div id='icon' className='w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-medBlue'>
-                <div id='iconContainer'>
-                    <img src={ClickedIcon} alt="Icon" />
+            <div id='iconClicked' onClick={handleClickClicked} className='w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-medBlue'>
+                <div id='iconClickedContainer'>
+                    <img src={ClickedIcon} alt="Clicked Icon" />
                 </div>
             </div>
         </div>
