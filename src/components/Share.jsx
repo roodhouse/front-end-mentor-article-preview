@@ -26,14 +26,16 @@ function Share() {
             // change the hidden div to display flex
             showDiv.style.display = 'flex';
         } else {
-            console.log('larger')
             // change the icon
-            const clickedIcon = e.target
-            const clickedIconParent = clickedIcon.parentElement.parentElement
-            const hiddenDiv = clickedIconParent.nextSibling
-            clickedIconParent.style.display = 'none'
-            hiddenDiv.style.display = 'flex'
-            
+            const clickedIcon = e.target;
+            const clickedIconParent = clickedIcon.parentElement.parentElement;
+            const hiddenDiv = clickedIconParent.nextSibling;
+            clickedIconParent.style.display = 'none';
+            hiddenDiv.style.display = 'flex';
+
+            // Display the tooltip
+            const toolTip = document.getElementById('socialToolTip');
+            toolTip.style.display = 'flex'
         }
     }
 
@@ -54,6 +56,16 @@ function Share() {
             hideDiv.style.display = 'none';
             // change the hidden div to display flex
             showDiv.style.display = 'flex';
+        } else {
+            console.log('bigger')
+            // Change Icon back
+            const clickedIcon = e.target;
+            const clickedIconParent = clickedIcon.parentElement.parentElement;
+            const hiddenDiv = clickedIconParent.previousSibling;
+            clickedIconParent.style.display = 'none'
+            hiddenDiv.style.display = 'flex'
+            // Hide the tooltip
+            document.getElementById('socialToolTip').style.display = 'none'
         }
     }
 
@@ -81,7 +93,7 @@ function Share() {
                     <img src={ClickedIcon} alt="Clicked Icon" />
                 </div>
             </div>
-            <div id="socialToolTip" className='hidden absolute flex w-[248px] justify-between bg-darkBlue px-[37px] py-[18px] rounded-[10px] items-center top-[320px] right-[200px]'>
+            <div id="socialToolTip" className='hidden absolute flex w-[248px] justify-between bg-darkBlue px-[37px] py-[18px] rounded-[10px] items-center top-[50%] right-[200px]'>
                 <div id="shareDiv" className='text-[13px] leading-[20px] font-medium font-["Manrope"] tracking-[5px] text-lightBlue pr-[21px]'>
                     <p>SHARE</p>
                 </div>
@@ -94,8 +106,8 @@ function Share() {
                 <div id="pinterest" className=''>
                     <img src={Pinterest} alt="Pinterest" />
                 </div>
+                <div id='arrow' className='w-0 h-0 border-x-[10px] border-x-transparent border-t-[10px] border-t-darkBlue absolute top-[99%] right-[115px]'></div>
             </div>
-            <div id='arrow' className='hidden w-0 h-0 border-x-[10px] border-x-transparent border-t-[10px] border-t-darkBlue absolute top-[375px] right-[317px]'></div>
         </div>
         <div id='clicked' className='hidden flex items-center justify-between bg-darkBlue rounded-[0px_0px_10px_10px] px-8 py-4'>
             <div id="shareDiv" className='text-[13px] leading-[20px] font-medium font-["Manrope"] tracking-[5px] text-lightBlue'>
