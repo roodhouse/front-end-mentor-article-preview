@@ -83,17 +83,17 @@ function Share() {
                     <p>28 Jun 2020</p>
                 </div>
             </div>
-            <div id='icon' onClick={handleClick} className='w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-offWhite'>
+            <div id='icon' onClick={handleClick} className='w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-offWhite cursor-pointer'>
                 <div id='iconContainer'>
                     <img src={Icon} alt="Icon" />
                 </div>
             </div>
-            <div id='iconClicked' onClick={handleClickClicked} className='hidden w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-medBlue'>
+            <div id='iconClicked' onClick={handleClickClicked} className='hidden w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-medBlue cursor-pointer'>
                 <div id='iconClickedContainer'>
                     <img src={ClickedIcon} alt="Clicked Icon" />
                 </div>
             </div>
-            <div id="socialToolTip" className='hidden absolute flex w-[248px] justify-between bg-darkBlue px-[37px] py-[18px] rounded-[10px] items-center top-[50%] right-[200px]'>
+            <div id="socialToolTip" className='hidden absolute flex w-[248px] justify-between bg-darkBlue px-[37px] py-[18px] rounded-[10px] items-center top-[50%] left-[50%] translate-x-[77%] translate-y-[0%]'>
                 <div id="shareDiv" className='text-[13px] leading-[20px] font-medium font-["Manrope"] tracking-[5px] text-lightBlue pr-[21px]'>
                     <p>SHARE</p>
                 </div>
